@@ -1,0 +1,13 @@
+# Configuração de referência do runtime no AWS App Runner.
+# Ao criar o serviço a partir de uma imagem no ECR, o App Runner pergunta
+# essas mesmas informações pelo Console — este arquivo serve de checklist/
+# documentação do que foi configurado.
+
+version: 1.0
+runtime: docker
+build:
+  commands: []   # build já foi feito localmente (build_push.sh); a imagem vem pronta do ECR
+run:
+  network:
+    port: 8501
+  env: []        # variáveis de ambiente da aplicação, se necessário
