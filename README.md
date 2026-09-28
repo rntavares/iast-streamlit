@@ -1,29 +1,29 @@
 # 🚀 FIAP — Pós-Graduação IAST: Fazendo o seu primeiro deploy com Streamlit
-### Pipelines de Machine Learning, Containerização com Docker, Monitoramento de Drift e Versionamento na AWS
+### Pipelines de Machine Learning, Containerização com Docker, Monitoramento de Drift e Versionamento
 
-[![GitLab](https://img.shields.io/badge/GitLab-Repository-fc6d26?logo=gitlab&logoColor=white)](https://gitlab.com/rntavares/fiap-iast-streamlit)
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github&logoColor=white)](https://github.com/rntavares/iast-streamlit)
+[![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![Docker](https://img.shields.io/badge/Container-Docker-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
-[![AWS](https://img.shields.io/badge/Cloud-AWS-232F3E?logo=amazon-aws&logoColor=white)](https://aws.amazon.com/)
+[![GitHub Actions](https://img.shields.io/badge/CI-GitHub_Actions-2088FF?logo=githubactions&logoColor=white)](https://github.com/features/actions)
 [![MLflow](https://img.shields.io/badge/Tracking-MLflow-0194E2?logo=mlflow&logoColor=white)](https://mlflow.org/)
 [![DVC](https://img.shields.io/badge/Data_Version-DVC-945DD6?logo=dvc&logoColor=white)](https://dvc.org/)
 
 Repositório oficial de materiais, apresentações, documentação técnica e laboratórios práticos da disciplina **"Fazendo o seu primeiro deploy com Streamlit"** do curso de **Pós-Graduação em Inteligência Artificial para Soluções Tecnológicas (IAST)** da **FIAP**.
 
-🔗 **Repositório GitLab:** [https://gitlab.com/rntavares/fiap-iast-streamlit](https://gitlab.com/rntavares/fiap-iast-streamlit)
+🔗 **Repositório GitHub:** [https://github.com/rntavares/iast-streamlit](https://github.com/rntavares/iast-streamlit)
 
 ---
 
 ## 🎯 Visão Geral da Disciplina
 
-Esta disciplina guia os alunos por toda a jornada de transformação de um modelo de Machine Learning em uma aplicação web interativa e profissional utilizando **Streamlit**, avançando pelas etapas de **conteinerização com Docker**, **deploy escalável na AWS**, **monitoramento contínuo de Drift** e **versionamento de ponta a ponta com MLflow e DVC**.
+Esta disciplina guia os alunos por toda a jornada de transformação de um modelo de Machine Learning em uma aplicação web interativa e profissional utilizando **Streamlit**, avançando pelas etapas de **conteinerização com Docker**, **publicação e automação com o GitHub (Streamlit Community Cloud, GitHub Actions e GitHub Container Registry)**, **monitoramento contínuo de Drift** e **versionamento de ponta a ponta com MLflow e DVC**.
 
 ```
  ┌─────────────┐     ┌──────────────┐     ┌─────────────┐     ┌─────────────┐
  │   AULA 01   │ ──▶ │   AULA 02    │ ──▶ │   AULA 03   │ ──▶ │   AULA 04   │
  │Pipeline ML  │     │Container com │     │Monitoramento│     │Versionamento│
- │& Streamlit  │     │Docker & ECR  │     │  de Drift   │     │MLflow & DVC │
+ │& Streamlit  │     │Docker & GHCR │     │  de Drift   │     │MLflow & DVC │
  └─────────────┘     └──────────────┘     └─────────────┘     └─────────────┘
 ```
 
@@ -33,20 +33,20 @@ Esta disciplina guia os alunos por toda a jornada de transformação de um model
 
 ### Clonar via HTTPS:
 ```bash
-git clone https://gitlab.com/rntavares/fiap-iast-streamlit.git
-cd fiap-iast-streamlit
+git clone https://github.com/rntavares/iast-streamlit.git
+cd iast-streamlit
 ```
 
 ### Clonar via SSH:
 ```bash
-git clone git@gitlab.com:rntavares/fiap-iast-streamlit.git
-cd fiap-iast-streamlit
+git clone git@github.com:rntavares/iast-streamlit.git
+cd iast-streamlit
 ```
 
 ### Vincular este diretório a um novo repositório Git:
 ```bash
 git init
-git remote add origin https://gitlab.com/rntavares/fiap-iast-streamlit.git
+git remote add origin https://github.com/rntavares/iast-streamlit.git
 git branch -M main
 git add .
 git commit -m "feat: initial commit - material completo do curso"
@@ -58,17 +58,19 @@ git push -u origin main
 ## 📂 Estrutura do Repositório
 
 ```text
-fiap-iast-streamlit/
+iast-streamlit/
+├── .devcontainer/                  # Ambiente do GitHub Codespaces (labs de sala)
 ├── 📚 Docs-Aulas-streamlit/        # Apostilas e documentação teórica
 │   ├── capitulos/                  # Capítulos detalhados em .docx (Aulas 01 a 04)
 │   ├── desafio/                    # Especificação do Desafio Final Integrado
 │   └── roteiros/                   # Roteiro pedagógico da disciplina
 │
-├── 🛠️ Labs-streamlit/              # Laboratórios práticos passo a passo
-│   ├── Aula01_Streamlit_EC2/       # Lab 01: Deploy do app Streamlit no Amazon EC2
-│   ├── Aula02_Docker_ECR_AppRunner/# Lab 02: Containerização, Amazon ECR & AWS App Runner
-│   ├── Aula03_Drift_SageMaker.../  # Lab 03: Monitoramento com SageMaker Model Monitor
-│   └── Aula04_MLflow_DVC_S3/       # Lab 04: Versionamento de dados com DVC e Amazon S3
+├── 🛠️ Labs-streamlit/              # Um lab por parte de aula (Codespaces) + Lab GitHub por aula
+│   ├── Aula01_Pipeline_ML_Streamlit/   # Parte1 pipeline · Parte2 interface · Parte3 publicação · Lab_GitHub_CI_do_App
+│   ├── Aula02_Containerizacao_Docker/  # Parte1 containers · Parte2 Dockerfile · Parte3 boas práticas · Lab_GitHub_GHCR
+│   ├── Aula03_Monitoramento_Drift/     # Parte1 degradação · Parte2 detecção · Parte3 reação · Lab_GitHub_Monitoramento_Agendado
+│   ├── Aula04_Versionamento_MLflow_DVC/ # Parte2 MLflow · Parte3 DVC · Lab_GitHub_DVC_no_CI
+│   └── requirements.txt            # Ambiente dos labs Codespaces
 │
 └── 📊 PPTs-Aulas-streamlit/        # Slides e apresentações (PowerPoint)
     ├── Aula01_Pipeline_ML_Streamlit.pptx
@@ -83,46 +85,50 @@ fiap-iast-streamlit/
 
 ### 🔹 Aula 01 — Pipeline de ML e Deploy no Streamlit
 * **Teoria:** Criação de interfaces de Machine Learning reativas e intuitivas com Streamlit, arquitetura de componentes, sessões e fluxo de dados.
-* **Lab Prático (`Labs-streamlit/Aula01_Streamlit_EC2`):**
-  * Provisionamento e configuração de instância Amazon EC2.
-  * Configuração de Security Groups, ambiente Python e execução do app Streamlit como serviço.
+* **Labs Codespaces (`Labs-streamlit/Aula01_Pipeline_ML_Streamlit`):**
+  * Parte 1: pipeline scikit-learn em etapas, serialização e serving desacoplado.
+  * Parte 2: app Streamlit, execução reativa, `@st.cache_resource` e limiar ajustável.
+  * Parte 3: publicação no Streamlit Community Cloud com atualização a cada `git push`.
+* **Lab GitHub (`Labs-streamlit/Aula01_Pipeline_ML_Streamlit/Lab_GitHub_CI_do_App`):**
+  * Testes automáticos da interface com `AppTest`, rodando no GitHub Actions a cada push, antes do deploy.
 
-### 🔹 Aula 02 — Containerização com Docker & Deploy Serverless na AWS
+### 🔹 Aula 02 — Containerização com Docker & Publicação da Imagem
 * **Teoria:** Fundamentos de Docker para Data Science, escrita de `Dockerfile` otimizado, boas práticas de camadas (*multi-stage*) e isolamento de dependências.
-* **Lab Prático (`Labs-streamlit/Aula02_Docker_ECR_AppRunner`):**
-  * Build da imagem Docker da aplicação Streamlit.
-  * Publicação da imagem no Amazon ECR (Elastic Container Registry).
-  * Deploy escalável e automatizado via AWS App Runner.
+* **Labs Codespaces (`Labs-streamlit/Aula02_Containerizacao_Docker`):**
+  * Parte 1: imagem, container e registry com os comandos essenciais do Docker.
+  * Parte 2: Dockerfile do app e cache de build.
+  * Parte 3: usuário não-root, `.dockerignore`, volumes, Docker Compose e scanning com Trivy.
+* **Lab GitHub (`Labs-streamlit/Aula02_Containerizacao_Docker/Lab_GitHub_GHCR`):**
+  * Build automatizado da imagem no GitHub Actions e publicação no GitHub Container Registry (`ghcr.io`).
+  * Execução da imagem publicada, tags por commit e rollback.
 
 ### 🔹 Aula 03 — Monitoramento de Modelos em Produção & Data Drift
 * **Teoria:** Ciclo pós-deploy, identificação de *Data Drift* e *Concept Drift*, degradação de acurácia e estratégias de re-treinamento.
-* **Lab Prático (`Labs-streamlit/Aula03_Drift_SageMakerModelMonitor`):**
-  * Configuração de baseline de dados e métricas estatísticas de qualidade.
-  * Execução e agendamento de análises com Amazon SageMaker Model Monitor.
+* **Labs Codespaces (`Labs-streamlit/Aula03_Monitoramento_Drift`):**
+  * Parte 1: 12 meses de produção simulados, os três níveis de monitoramento e o concept drift silencioso.
+  * Parte 2: PSI, Kolmogorov-Smirnov e qui-quadrado, e o efeito do tamanho da janela.
+  * Parte 3: alertas, gatilho de re-treino e relatório do Evidently.
+* **Lab GitHub (`Labs-streamlit/Aula03_Monitoramento_Drift/Lab_GitHub_Monitoramento_Agendado`):**
+  * Monitoramento de drift agendado no GitHub Actions, com relatório do Evidently e issue de alerta quando há drift.
 
-### 🔹 Aula 04 — Versionamento de Dados e Modelos com MLflow, DVC e S3
+### 🔹 Aula 04 — Versionamento de Dados e Modelos com MLflow e DVC
 * **Teoria:** Governança completa de dados (*Data Lineage*), rastreabilidade de experimentos e versionamento de grandes volumes de dados sem sobrecarregar o Git.
-* **Lab Prático (`Labs-streamlit/Aula04_MLflow_DVC_S3`):**
-  * Configuração do DVC (Data Version Control) com storage remoto no Amazon S3.
-  * Registro de experimentos e métricas com MLflow Tracking integrado.
+* **Labs Codespaces (`Labs-streamlit/Aula04_Versionamento_MLflow_DVC`):**
+  * Parte 1: conceitual, sem lab.
+  * Parte 2: experimentos no MLflow, Model Registry e promoção `@challenger` → `@champion` com rollback.
+  * Parte 3: dados versionados com DVC, pipeline `dvc.yaml` e volta no tempo para dados e modelo.
+* **Lab GitHub (`Labs-streamlit/Aula04_Versionamento_MLflow_DVC/Lab_GitHub_DVC_no_CI`):**
+  * Pipeline DVC reproduzido no GitHub Actions a cada pull request, com a diferença de métricas comentada no PR.
 
 ---
 
 ## 🛠️ Pré-requisitos & Ambiente
 
-Para executar os laboratórios práticos, você precisará:
+Todos os labs precisam apenas de uma **conta gratuita no GitHub**: rodam no **GitHub Codespaces** (Python 3.12, Docker, DVC e as dependências já instaladas pelo `.devcontainer/`) e no **GitHub Actions**. Não é preciso conta em nuvem nem cartão de crédito. O passo a passo inicial está em `Labs-streamlit/README.md`.
 
-1. **Conta AWS:** Acesso aos serviços utilizados (EC2, ECR, App Runner, SageMaker, S3).
-2. **AWS CLI:** Instalado e configurado (`aws configure`).
-3. **Python:** Versão 3.10 ou superior.
-4. **Docker:** Docker Desktop ou Docker Engine para build e push das imagens.
-5. **Git & DVC:** Para controle de versão de código e dados.
+> **Cota gratuita:** o Codespaces consome a cota gratuita da sua conta enquanto está ligado. Ao terminar cada aula, **pare o codespace** (github.com/codespaces → ⋯ → Stop).
 
----
-
-## ⚠️ Cuidados com Custos na AWS
-
-> **ATENÇÃO:** Lembre-se de encerrar as instâncias EC2, serviços do App Runner e endpoints do SageMaker após a conclusão de cada laboratório para evitar cobranças indesejadas no Free Tier / Faturamento da AWS.
+Para rodar fora do Codespaces: Python 3.12, Docker, Git e `pip install -r Labs-streamlit/requirements.txt`.
 
 ---
 
@@ -134,6 +140,6 @@ O diretório `Docs-Aulas-streamlit/desafio/` traz a especificação do **Desafio
 
 ## 👨‍🏫 Autor & Coordenação
 
-* **Professor / Autor:** Rafael Tavares ([@rntavares](https://gitlab.com/rntavares))
+* **Professor / Autor:** Rafael Tavares ([@rntavares](https://github.com/rntavares))
 * **Curso:** Pós-Graduação em Inteligência Artificial para Soluções Tecnológicas (IAST)
 * **Instituição:** [FIAP](https://www.fiap.com.br)
