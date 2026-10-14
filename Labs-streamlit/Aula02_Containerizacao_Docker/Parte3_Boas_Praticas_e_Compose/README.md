@@ -24,7 +24,7 @@ Simule um dataset bruto de 100 MB esquecido na pasta do projeto:
 mkdir -p dados && head -c 100000000 /dev/urandom > dados/historico_bruto.csv
 docker build -t churn-app:seguro .
 ```
-Procure na saída a linha `transferring context`: poucos kB, porque o `.dockerignore` exclui a pasta `dados/`. Agora comente a linha `dados/` no `.dockerignore` (coloque `#` na frente) e reconstrua:
+Procure na saída a linha `transferring context`: menos de 1 kB, porque o `.dockerignore` exclui a pasta `dados/`. Agora comente a linha `dados/` no `.dockerignore` (coloque `#` na frente) e reconstrua:
 ```bash
 docker build -t churn-app:seguro .
 docker images churn-app
