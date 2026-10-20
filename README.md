@@ -66,6 +66,7 @@ iast-streamlit/
 │   └── roteiros/                   # Roteiro pedagógico da disciplina
 │
 ├── 🛠️ Labs-streamlit/              # Um lab por parte de aula (Codespaces) + Lab GitHub por aula
+│   ├── ROTEIRO_DO_ALUNO.md         # Roteiro do aluno: passo a passo de todos os labs
 │   ├── Aula01_Pipeline_ML_Streamlit/   # Parte1 pipeline · Parte2 interface · Parte3 publicação · Lab_GitHub_CI_do_App
 │   ├── Aula02_Containerizacao_Docker/  # Parte1 containers · Parte2 Dockerfile · Parte3 boas práticas · Lab_GitHub_GHCR
 │   ├── Aula03_Monitoramento_Drift/     # Parte1 degradação · Parte2 detecção · Parte3 reação · Lab_GitHub_Monitoramento_Agendado
@@ -125,6 +126,8 @@ iast-streamlit/
 ## 🛠️ Pré-requisitos & Ambiente
 
 Todos os labs precisam apenas de uma **conta gratuita no GitHub**: rodam no **GitHub Codespaces** (Python 3.12, Docker, DVC e as dependências já instaladas pelo `.devcontainer/`) e no **GitHub Actions**. Não é preciso conta em nuvem nem cartão de crédito. O passo a passo inicial está em `Labs-streamlit/README.md`.
+
+📘 **Roteiro dos labs:** [`Labs-streamlit/ROTEIRO_DO_ALUNO.md`](Labs-streamlit/ROTEIRO_DO_ALUNO.md) guia o aluno por todos os labs, com o que conferir em cada um e uma tabela de progresso.
 
 > **Cota gratuita:** o Codespaces consome a cota gratuita da sua conta enquanto está ligado. Ao terminar cada aula, **pare o codespace** (github.com/codespaces → ⋯ → Stop).
 

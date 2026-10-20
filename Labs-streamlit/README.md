@@ -1,5 +1,7 @@
 # Labs — Fazendo o seu primeiro deploy com Streamlit
 
+📘 **Comece pelo [Roteiro do aluno](ROTEIRO_DO_ALUNO.md)**: o passo a passo de todos os labs, com o que conferir em cada um e uma tabela para marcar o seu progresso.
+
 Os labs seguem as partes de cada aula: **um lab por parte**, de 12 a 15 minutos, feitos no **GitHub Codespaces**. Só é preciso uma conta gratuita no GitHub: sem instalar nada, sem cartão de crédito e sem conta em nuvem.
 
 Cada parte é **independente**: a pasta já traz tudo de que o lab precisa. Se você perdeu a Parte 1, pode fazer a Parte 2 normalmente.
@@ -17,6 +19,7 @@ Cada pasta tem seu próprio `README.md` com o passo a passo completo.
 
 ```
 Labs-streamlit/
+├── ROTEIRO_DO_ALUNO.md       # passo a passo de todos os labs para o aluno
 ├── Aula01_Pipeline_ML_Streamlit/
 │   ├── Parte1_Estruturando_o_Pipeline/
 │   ├── Parte2_Interface_Streamlit/
